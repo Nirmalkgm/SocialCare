@@ -1,7 +1,16 @@
-from .views import booking_view, hospital_view
-from django.urls import path
+from . import views
+from django.urls import include, path
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register(r'hospitals', views.HospitalViewSet)
+router.register(r'departments', views.DepartmentViewSet)
+router.register(r'doctors', views.DoctorViewSet)
+router.register(r'patients', views.PatientViewSet)
+router.register(r'tokens', views.TokenViewSet)
 
 urlpatterns = [
-	path('', booking_view, name='booking'),
-	path('<hospital_id>', hospital_view, name='hospital'),
+	path('api/', include(router.urls)),
+	path('<hospital_id>', views.hospital_view, name='hospital'),
+	path('', views.booking_view, name='booking'),
 ]
