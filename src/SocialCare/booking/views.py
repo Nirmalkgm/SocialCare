@@ -8,4 +8,4 @@ def booking_view(request, *args, **kwargs):
 
 def hospital_view(request, hospital_id, *args, **kwargs):
 	#return HttpResponse('<h1>Booking</h1>')
-	return render(request, "booking/hospital.html", {'hospital_id', hospital_id})
+	return render(request, "booking/hospital.html", {'hospital_id': hospital_id})
