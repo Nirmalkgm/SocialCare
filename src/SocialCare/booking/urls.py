@@ -11,6 +11,7 @@ router.register(r'tokens', views.TokenViewSet)
 
 urlpatterns = [
 	path('api/', include(router.urls)),
-	path('<hospital_id>', views.hospital_view, name='hospital'),
+	path('hospital/<hospital_id>', views.hospital_view, name='hospital'),
+	path('track/<tracking_id>', views.tracking_view, name='track'),
 	path('', views.booking_view, name='booking'),
 ]

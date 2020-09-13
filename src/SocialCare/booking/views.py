@@ -3,15 +3,33 @@ from django.http import HttpResponse
 from rest_framework import viewsets, permissions
 from .models import Hospital, Department, Doctor, Token, Patient
 from .serializers import HospitalSerializer, DepartmentSerializer, DoctorSerializer, TokenSerializer, PatientSerializer
+from django.template.defaulttags import register
 
-# Create your views here.
+import uuid
+
 def booking_view(request, *args, **kwargs):
-	#return HttpResponse('<h1>Booking</h1>')
 	return render(request, "booking/booking.html", {})
 
 def hospital_view(request, hospital_id, *args, **kwargs):
-	#return HttpResponse('<h1>Booking</h1>')
-	return render(request, "booking/hospital.html", {'hospital_id': hospital_id})
+	context = {}
+	try:
+		val = uuid.UUID(hospital_id, version=4)
+		hospital = Hospital.objects.filter(hospital_id=hospital_id)
+		if not hospital:
+			context['error'] = True
+			context['Error message'] = "Hospital not found"
+		else:
+			print(hospital.first().name)
+			context['error'] = False
+			context['hospital'] = hospital.first()
+	except ValueError:
+		context['error'] = True
+		context['err_msg'] = "Invalid hospital id"
+
+	return render(request, "booking/hospital.html", context)
+
+def tracking_view(request, tracking_id, *args, **kwargs):
+	return render(request, "booking/tracking.html", {'tracking_id': tracking_id})
 
 
 class HospitalViewSet(viewsets.ModelViewSet):
