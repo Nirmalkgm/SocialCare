@@ -1,4 +1,4 @@
-# Social Care - A reliable hospital booking service
+                                                               # Social Care - A reliable hospital booking service
 ### FOSS2020HACK
 
 **Are you tired of waiting in a long queue to consult a doctor?**
@@ -43,3 +43,7 @@ Enter the **tracking id** and find your position
 ![Screenshot1](https://github.com/Nirmalkgm/SocialCare/blob/master/Screenshots/Screenshot%20(21).png)
 ![Screenshot1](https://github.com/Nirmalkgm/SocialCare/blob/master/Screenshots/Screenshot%20(22).png)
 ![Screenshot1](https://github.com/Nirmalkgm/SocialCare/blob/master/Screenshots/Screenshot%20(23).png)
+
+
+### Contributers:
+##### Nikhil M Tomy, Nirmal K George Mathew, Ritty Thomas, Anurose K Thomas
