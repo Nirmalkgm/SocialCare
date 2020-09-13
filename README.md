@@ -1,4 +1,4 @@
-#Social Care - A reliable hospital booking service
+# Social Care - A reliable hospital booking service
 ### FOSS2020HACK
 
 **Are you tired of waiting in a long queue to consult a doctor?**
